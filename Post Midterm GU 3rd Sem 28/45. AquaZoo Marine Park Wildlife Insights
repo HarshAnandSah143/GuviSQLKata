@@ -28,3 +28,12 @@ SELECT
 FROM tank_counts t, total_animals total;
 
 Q3)
+SELECT 
+    species_name,
+    feeding_time,
+    (
+        CAST(strftime('%H', feeding_time) AS INTEGER) +
+        CAST(strftime('%M', feeding_time) AS INTEGER) / 60.0
+    ) AS feeding_time_in_hours
+FROM marine_animals
+WHERE feeding_time>'18:00:00';
