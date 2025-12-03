@@ -1,0 +1,21 @@
+Q1)
+INSERT INTO students (student_id, student_name, email)
+VALUES (6,'Tanya', 'tanya@example.com');
+SELECT * FROM students WHERE email = 'tanya@example.com';
+
+Q2)
+INSERT INTO courses (course_id, course_name, credits)
+VALUES (106, 'Artificial Intelligence', 5);
+SELECT * FROM courses WHERE course_id = 106;
+
+Q3)
+CREATE TABLE enrollments (
+    enroll_id INT PRIMARY KEY,
+    student_id INT,
+    course_id INT,
+    FOREIGN KEY (student_id) REFERENCES students(student_id),
+    FOREIGN KEY (course_id) REFERENCES courses(course_id)
+);
+INSERT INTO enrollments (enroll_id, student_id, course_id)
+VALUES (1, 4, 103);
+select*from enrollments;

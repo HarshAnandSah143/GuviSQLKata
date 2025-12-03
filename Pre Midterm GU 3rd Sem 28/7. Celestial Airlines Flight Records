@@ -1,0 +1,8 @@
+Q1)
+SELECT 
+    flight_id, origin, destination, capacity-booked_seats as available_seats
+FROM flights;
+
+Q2)
+SELECT SUM(f.booked_seats) AS Total_Passengers
+FROM flights AS f;

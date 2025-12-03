@@ -1,0 +1,17 @@
+Q1)insert into chocolates(id, name, type, quantity, price) values (4, 'Berry Bliss', 'Berry', 50, 200.00);
+select * from chocolates where id=4;
+
+Q2)
+update chocolates set quantity = 250 where id = 2;
+select * from chocolates where id = 2;
+
+Q3)
+delete from chocolates where id = 3;
+select * from chocolates;
+
+Q4)
+select name, price from chocolates
+order by price desc;
+
+Q5)
+select sum(quantity) as total from chocolates;

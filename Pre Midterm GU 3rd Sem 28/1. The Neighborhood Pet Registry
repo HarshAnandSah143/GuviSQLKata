@@ -1,0 +1,22 @@
+Q1)
+select count(*) as total_pets
+from pets;
+
+Q2)
+select age
+from pets
+where name = 'Fluffy'
+    and owner = 'Alice';
+
+Q3)
+update pets
+set age = 6
+where 
+     owner = 'Bob';
+select *
+from pets
+where name = 'Buddy';
+
+Q4)
+select sum(price * stock) as total_value
+from books;

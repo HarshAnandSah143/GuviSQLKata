@@ -1,0 +1,17 @@
+Q1)
+INSERT INTO events (event_name, date, location)
+VALUES ('Sangeet', '2024-12-13', 'Royal Banquet Hall');
+
+Q2)
+update events set location = 'Luxury Palace Hotel' where id = 1;
+
+Q3)
+select * from vendors where service_type = 'Catering';
+
+Q4)
+select * from events 
+order by date asc;
+
+Q5)
+select * from events 
+where location = 'Beachside Resort';

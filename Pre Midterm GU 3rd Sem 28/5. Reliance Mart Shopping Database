@@ -1,0 +1,17 @@
+Q1)
+select count(*) as No_of_items from products ;
+
+Q2)
+update products set stock=100 where name='Shampoo';
+select * from products where name='Shampoo';
+
+Q3)
+delete from products where name='Biscuits';
+select * from products;
+
+Q4)
+select sum(price*stock) as total_value from products;
+
+Q5)
+insert into products(id,name,category,price,stock) values (5,'Hand Sanitizer','Personal Care', 150,200);
+select * from products where name='Hand Sanitizer';
