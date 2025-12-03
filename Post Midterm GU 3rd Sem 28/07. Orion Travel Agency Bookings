@@ -1,0 +1,9 @@
+Q1)
+SELECT *
+FROM travel_bookings
+ORDER BY travel_date ASC;
+
+Q2)
+SELECT *
+FROM travel_bookings
+WHERE package_cost > 2800;

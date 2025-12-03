@@ -1,0 +1,19 @@
+Q1)
+SELECT category, 
+  SUM(quantity * price) 
+  AS total_inventory_value
+FROM cafe_inventory
+GROUP BY category;
+
+Q2)
+SELECT item_name, price
+FROM cafe_inventory
+ORDER BY price DESC
+LIMIT 1;
+
+Q3)
+SELECT item_name, (quantity * price) 
+AS total_value
+FROM cafe_inventory
+ORDER BY total_value DESC
+LIMIT 2;

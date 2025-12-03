@@ -1,0 +1,8 @@
+Q1)
+SELECT *
+FROM vehicles
+ORDER BY price ASC;
+
+Q2)
+SELECT SUM(price * quantity) AS total_inventory_value
+FROM vehicles;

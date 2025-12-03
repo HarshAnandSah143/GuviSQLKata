@@ -1,0 +1,15 @@
+Q1)
+select * from gadgets;
+
+Q2)
+update gadgets set stock= stock-5  where name='Smartphone';
+
+Q3)
+insert into gadgets (id, name, category, price, stock) values (4, 'Smartwatch', 'Wearable', 10000.00, 100);
+
+Q4)
+select avg(price) as avg_price from gadgets;
+
+Q5)
+update gadgets set price = price*0.95;
+select * from gadgets;

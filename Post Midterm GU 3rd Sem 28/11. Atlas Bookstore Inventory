@@ -1,0 +1,13 @@
+Q1)
+SELECT *
+FROM bookstore
+WHERE quantity < 5;
+
+Q2)
+SELECT SUM(price * quantity) AS total_stock_value
+FROM bookstore;
+
+Q3)
+SELECT *
+FROM bookstore
+ORDER BY author ASC;

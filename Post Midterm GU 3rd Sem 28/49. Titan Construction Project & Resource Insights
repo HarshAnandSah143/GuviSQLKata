@@ -1,0 +1,14 @@
+Q1)
+
+
+Q2)
+SELECT ROUND(AVG(budget), 2) 
+AS average_budget
+FROM construction_projects;
+
+Q3)
+BEGIN TRANSACTION;
+UPDATE construction_projects
+SET budget = 250000000
+WHERE project_id = 1;
+ROLLBACK;

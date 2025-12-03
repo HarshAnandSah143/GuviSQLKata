@@ -1,0 +1,15 @@
+Q1)
+select * from movies;
+
+Q2)
+update movies set available_copies=available_copies+3 where id=3;
+
+Q3)
+INSERT INTO movies (id, title, genre, rental_price, available_copies)
+VALUES (4,'Interstellar', 'Sci-Fi', 55.00, 8);
+
+Q4)
+select title from movies order by rental_price asc limit 1;
+
+Q5)
+select sum(rental_price*available_copies) from movies;

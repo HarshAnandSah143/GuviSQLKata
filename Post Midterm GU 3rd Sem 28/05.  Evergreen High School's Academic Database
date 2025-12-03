@@ -1,0 +1,51 @@
+Q1)
+select name,email from students where grade=11 ;
+
+Q2)
+SELECT
+  s.name,
+  c.name
+FROM
+  students AS s
+JOIN
+  enrollments AS g ON s.id = g.student_id
+JOIN
+  courses AS c ON g.course_id = c.id
+WHERE
+  g.grade = 'A'
+ORDER BY
+  s.name ASC,
+  c.name ASC;
+
+Q3)
+UPDATE courses
+SET credits = 5
+WHERE name = 'Physics';
+SELECT * FROM Courses;
+
+Q4)
+SELECT c.name as course_name, count(e.Student_ID) as enrollment_count
+FROM courses c
+left JOIN enrollments e ON c.id = e.course_id
+group by c.id,c.name
+ORDER BY enrollment_count desc;
+
+Q5)
+INSERT INTO students (id, name, grade, email)
+VALUES (6, 'Frank White', 10, 'frank.w@school.edu');
+INSERT INTO enrollments (student_id, course_id, enrollment_date)
+VALUES (6, 101, '2024-12-20');
+INSERT INTO enrollments (student_id, course_id, enrollment_date)
+VALUES (6, 105, '2024-12-20');
+SELECT
+    s.name AS "Student name",
+    c.name AS "Course name",
+    e.enrollment_date AS "Enrollment date"
+FROM
+    students as s
+JOIN
+    enrollments as e ON s.id = e.student_id
+JOIN
+    courses as c on e.course_id=c.id
+WHERE
+    s.id = 6;

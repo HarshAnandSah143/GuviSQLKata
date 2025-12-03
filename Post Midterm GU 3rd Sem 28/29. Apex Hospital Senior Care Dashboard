@@ -1,0 +1,15 @@
+Q1)
+SELECT patient_name, age, disease, ward
+FROM patients
+WHERE age > 60;
+
+Q2)
+SELECT ward, COUNT(*) AS patient_count
+FROM patients
+GROUP BY ward;
+
+Q3)
+SELECT patient_name, age, disease, ward
+FROM patients
+order by age desc
+limit 2;

@@ -1,0 +1,14 @@
+Q1)
+select count(*) as total_books from books;
+
+Q2)
+update books set stock=45 where title='Treasure Island';
+
+Q3)
+insert into books(id,title,category,price,stock) values (4,'Around the World in 80 Days','Adventure',350,100);
+
+Q4)
+select sum(price*stock) as total_vale from books;
+
+Q5)
+delete from books where title='Moby Dick';

@@ -1,0 +1,25 @@
+Q1)
+select train_number, departure_time from trains order by departure_time asc limit 1;
+
+Q2)
+select train_number, arrival_time from trains as t join schedules as s on 
+t.id=s.train_id where arrival_time > '15:00:00' and date='2024-09-01';
+
+Q3)
+update trains set departure_time='09:00:00' where train_number=12345;
+select * from trains where train_number=12345
+
+Q4)
+select train_number, arrival_time from trains as t join schedules as s on 
+t.id=s.train_id where date='2024-09-01'order by arrival_time desc limit 1;
+
+Q5)
+select case cast (strftime('%w', date) as integer)
+  when 0 then 'Sunday'
+  when 1 then 'Monday'
+  when 2 then 'Tuesday'
+  when 3 then 'Wednesday'
+  when 4 then 'Thursday'
+  when 5 then 'Friday'
+  else 'Saturday' end as name,
+  count(train_id) from schedules;

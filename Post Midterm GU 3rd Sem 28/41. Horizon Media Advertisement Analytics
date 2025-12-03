@@ -1,0 +1,16 @@
+Q1)
+
+
+Q2)
+
+
+Q3)
+SELECT 
+  ad_id,
+  client_name,
+  ad_type,
+  duration_seconds,
+  RANK() OVER (PARTITION BY ad_type 
+  ORDER BY duration_seconds DESC) 
+  AS duration_rank
+FROM advertisements;

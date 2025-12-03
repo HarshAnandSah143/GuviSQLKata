@@ -1,0 +1,14 @@
+Q1)
+SELECT *
+FROM solar_installations
+WHERE capacity_kw > 5;
+
+Q2)
+SELECT location, SUM(capacity_kw) AS total_capacity_kw
+FROM solar_installations
+GROUP BY location;
+
+Q3)
+SELECT *
+FROM solar_installations
+ORDER BY capacity_kw DESC;

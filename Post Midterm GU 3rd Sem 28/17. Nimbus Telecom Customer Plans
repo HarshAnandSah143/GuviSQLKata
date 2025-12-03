@@ -1,0 +1,14 @@
+Q1)
+SELECT *
+FROM telecom_customers
+WHERE plan_type = 'Premium';
+
+Q2)
+SELECT plan_type, SUM(monthly_fee) AS total_monthly_revenue
+FROM telecom_customers
+GROUP BY plan_type;
+
+Q3)
+SELECT *
+FROM telecom_customers
+ORDER BY monthly_fee DESC;

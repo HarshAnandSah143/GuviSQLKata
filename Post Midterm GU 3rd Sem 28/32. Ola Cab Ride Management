@@ -1,0 +1,29 @@
+Q1)
+select sum(fare) 
+from rides 
+where ride_date='2024-09-11';
+
+Q2)
+select cab_model, avg(fare) 
+from rides 
+group by cab_model;
+
+Q3)
+select fare 
+from rides 
+where user_name='Ravi Kumar' 
+order by fare 
+desc limit 1;
+
+Q4)
+select cab_model 
+from rides 
+group by cab_model 
+order by sum(fare) 
+desc limit 1;
+
+Q5)
+select user_name 
+from rides 
+group by user_name 
+order by count(user_name) desc ;

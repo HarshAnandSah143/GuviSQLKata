@@ -1,0 +1,39 @@
+Q1)
+select flight_number, sum(seats_reserved) 
+as total_seats 
+from flights f 
+join bookings b 
+on f.id=b.flight_id 
+group by flight_number;
+
+Q2)
+select flight_number, departure_time 
+from flights f 
+join bookings b 
+on f.id=b.flight_id 
+where origin='Mumbai' 
+and booking_date='2024-09-01';
+
+Q3)
+select flight_number, seats_reserved 
+as total_seats 
+from flights f 
+join bookings b 
+on f.id=b.flight_id 
+group by flight_number 
+order by seats_reserved 
+desc limit 1;
+
+Q4)
+update flights set departure_time='2024-09-12 17:00:00' 
+where id=3;
+select * from flights 
+where id=3;
+
+Q5)
+select passenger_name 
+from flights f 
+join bookings b 
+on f.id=b.flight_id 
+where destination='Banglore' 
+and departure_time='2024-09-11 15:00:00';

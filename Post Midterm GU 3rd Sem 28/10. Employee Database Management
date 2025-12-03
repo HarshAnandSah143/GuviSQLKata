@@ -1,0 +1,17 @@
+Q1)
+select count(*) from employees;
+
+Q2)
+update employees set position='Senior Designer',salary=65000 where name='Anil Kumar'; 
+select * from employees where name='Anil Kumar';
+
+Q3)
+delete from employees where name='Pooja Verma';
+select * from employees;
+
+Q4)
+select sum(salary) as total_salary from employees;
+
+Q5)
+insert into employees(id,name,position,salary,department) values (4,'Rakesh Iyer', 'Intern', 35000, 'Marketing');
+select * from employees where id=4;

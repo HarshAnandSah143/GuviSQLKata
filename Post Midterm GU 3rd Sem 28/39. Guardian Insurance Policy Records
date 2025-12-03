@@ -1,0 +1,30 @@
+Q1)
+SELECT 
+  policy_id,
+  holder_name,
+  policy_type,
+  premium_amount,
+  RANK() OVER (PARTITION BY policy_type 
+  ORDER BY premium_amount DESC) 
+  AS premium_rank
+FROM insurance_policies;
+
+Q2)
+WITH premium_summary AS (
+  SELECT 
+    policy_type,
+    SUM(premium_amount) AS total_premium,
+    AVG(premium_amount) AS average_premium
+  FROM insurance_policies
+  GROUP BY policy_type
+),
+total_overall AS (
+  SELECT SUM(premium_amount) AS overall_total
+  FROM insurance_policies
+)
+SELECT 
+  ps.policy_type,
+  ps.total_premium,
+  ps.average_premium,
+  ROUND((ps.total_premium / tover.overall_total) * 100, 2) AS percentage_contribution
+FROM premium_summary ps, total_overall tover;

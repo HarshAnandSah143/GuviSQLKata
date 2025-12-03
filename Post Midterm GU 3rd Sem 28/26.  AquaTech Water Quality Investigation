@@ -1,0 +1,15 @@
+Q1)
+SELECT *
+FROM water_quality
+WHERE ph_level > 7.5;
+
+Q2)
+SELECT location, AVG(turbidity) AS average_turbidity
+FROM water_quality
+GROUP BY location;
+
+Q3)
+SELECT *
+FROM water_quality
+ORDER BY measurement_date DESC
+LIMIT 2;

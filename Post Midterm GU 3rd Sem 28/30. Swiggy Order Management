@@ -1,0 +1,15 @@
+Q1)
+select * from orders ;
+
+Q2)
+select quantity from orders where id=2;
+
+Q3)
+update orders set quantity=3 where id=1;
+select * from orders ;
+
+Q4)
+select restaurant_name from orders where id=1;
+
+Q5)
+select * from orders where order_date='2024-09-10';

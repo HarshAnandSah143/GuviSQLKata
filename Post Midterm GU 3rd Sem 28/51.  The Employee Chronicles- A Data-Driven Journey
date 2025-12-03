@@ -1,0 +1,197 @@
+Q1)
+SELECT employee_id, first_name, last_name, department_id
+FROM employees
+WHERE department_id = (
+    SELECT department_id
+    FROM employees
+    WHERE first_name = 'Steven' AND last_name='King'
+);
+
+Q2)
+SELECT COUNT(*) AS IT_Programmers
+FROM employees
+WHERE job_id = 'IT_PROG';
+
+Q3)
+SELECT first_name, last_name, salary
+FROM employees
+WHERE salary > 50000;
+
+Q4)
+SELECT employee_id, first_name, last_name, manager_id
+FROM employees
+WHERE manager_id = 145;
+
+Q5)
+SELECT COUNT(*) AS total_employees
+FROM employees;
+
+Q6)
+SELECT employee_id, first_name, last_name, department_id
+FROM employees
+WHERE department_id = 70;
+
+Q7)
+SELECT COUNT(DISTINCT job_id) 
+AS unique_job_titles
+FROM employees;
+
+Q8)
+SELECT first_name, last_name, salary
+FROM employees
+WHERE salary = (
+    SELECT MAX(salary)
+    FROM employees
+);
+
+Q9)
+SELECT email
+FROM employees;
+
+Q10)
+SELECT employee_id, first_name, last_name, department_id
+FROM employees
+WHERE department_id = 90;
+
+Q11)
+SELECT first_name, last_name
+FROM employees
+WHERE salary < 30000;
+
+Q12)
+SELECT COUNT(DISTINCT job_id) 
+AS total_job_titles
+FROM employees;
+
+Q13)
+SELECT phone_number
+FROM employees
+WHERE first_name = 'Nancy' 
+AND last_name = 'Khoo';
+
+Q14)
+SELECT COUNT(*) AS total_employees
+FROM employees
+WHERE department_id = 70;
+
+Q15)
+SELECT employee_id, first_name, last_name, job_id
+FROM employees
+WHERE job_id = 'FI_MGR';
+
+Q16)
+SELECT employee_id, first_name, last_name, email
+FROM employees
+WHERE email LIKE '%gmail.com';
+
+Q17)
+SELECT employee_id,first_name,last_name,hire_date 
+FROM employees 
+WHERE hire_date LIKE '2001%';
+
+Q18)
+SELECT employee_id, first_name, last_name, salary
+FROM employees
+WHERE salary > 60000;
+
+Q19)
+SELECT employee_id,first_name,last_name,hire_date 
+FROM employees 
+WHERE hire_date LIKE '2009%';
+
+Q20)
+SELECT employee_id, first_name, last_name, salary
+FROM employees
+WHERE salary > 60000;
+
+Q21)
+SELECT employee_id, first_name, last_name, manager_id
+FROM employees
+WHERE manager_id = 102;
+
+Q22)
+SELECT employee_id, first_name, last_name, department_id
+FROM employees
+WHERE department_id = 80;
+
+Q23)
+SELECT first_name, last_name, email, salary
+FROM employees
+WHERE job_id = 'IT_PROG';
+
+Q24)
+SELECT first_name, last_name, job_id
+FROM employees
+WHERE salary > 60000;
+
+Q25)
+SELECT first_name,salary,hire_date 
+FROM employees 
+WHERE hire_date LIKE '2001%' 
+ORDER BY salary DESC;
+
+Q26)
+SELECT first_name, last_name, email, job_id, salary
+FROM employees
+WHERE job_id = 'IT_PROG';
+
+Q27)
+SELECT employee_id, first_name, last_name, department_id
+FROM employees
+WHERE department_id = 70;
+
+Q28)
+SELECT first_name, last_name, salary
+FROM employees
+WHERE salary < 40000;
+
+Q29)
+SELECT COUNT(*) AS total_employees
+FROM employees
+WHERE department_id = 100;
+
+Q30)
+SELECT first_name, last_name, hire_date
+FROM employees
+WHERE job_id = 'AD_VP';
+
+Q31)
+SELECT employee_id, first_name, last_name, job_id
+FROM employees
+WHERE job_id = 'AC_ACCOUNTANT';
+
+Q32)
+SELECT SUM(salary) AS total_salary
+FROM employees;
+
+Q33)
+SELECT AVG(salary) AS average_salary
+FROM employees;
+
+Q34)
+SELECT department_id, COUNT(*) 
+AS total_employees
+FROM employees
+GROUP BY department_id;
+
+Q35)
+SELECT job_id, COUNT(*) AS total_employees
+FROM employees
+GROUP BY job_id;
+
+Q36)
+SELECT job_id, COUNT(*) AS total_employees
+FROM employees
+GROUP BY job_id;
+
+Q37)
+SELECT first_name || ' ' || last_name 
+AS Employee_names FROM employees;
+38-SELECT COUNT(*) AS employees_below_40000
+FROM employees
+WHERE salary < 40000;
+
+Q38)
+SELECT COUNT(*) AS employees_below_40000
+ FROM employees
+ WHERE salary < 40000;

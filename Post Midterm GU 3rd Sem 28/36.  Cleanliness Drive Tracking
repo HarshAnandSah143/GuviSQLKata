@@ -1,0 +1,18 @@
+Q1)
+select * from volunteers 
+where hours_contributed > 4;
+
+Q2)
+select * from cleanliness_drives 
+where location = 'Riverbank';
+
+Q3)
+select * from cleanliness_drives 
+where location = 'Central Park';
+
+Q4)
+select c.drive_name, count(volunteer_name) 
+from volunteers v 
+join cleanliness_drives c 
+on v.drive_id = c.id 
+group by c.drive_name ;

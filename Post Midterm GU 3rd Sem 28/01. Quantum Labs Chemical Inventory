@@ -1,0 +1,14 @@
+Q1)
+SELECT *
+FROM chemical_inventory
+WHERE hazard_level = 'High';
+
+Q2)
+SELECT storage_room, SUM(quantity_liters) AS total_quantity
+FROM chemical_inventory
+GROUP BY storage_room;
+
+Q3)
+SELECT *
+FROM chemical_inventory
+ORDER BY quantity_liters DESC;

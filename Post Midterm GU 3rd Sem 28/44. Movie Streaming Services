@@ -1,0 +1,21 @@
+Q1)
+select * from movie_streaming_services 
+where monthly_cost > 10;
+
+Q2)
+select * from movie_streaming_services 
+order by number_of_movies desc limit 1;
+
+Q3)
+select count(available_regions) 
+from movie_streaming_services 
+group by available_regions limit 1;
+
+Q4)
+select * from movie_streaming_services 
+where 	available_regions = 'Global' 
+and number_of_movies > 3000;
+
+Q5)
+select avg(monthly_cost) 
+from movie_streaming_services;

@@ -1,0 +1,15 @@
+Q1)
+SELECT *
+FROM crop_yield
+WHERE harvest_date BETWEEN '2025-04-01' AND '2025-04-30';
+
+Q2)
+SELECT crop_name, AVG(yield_tons) AS average_yield
+FROM crop_yield
+GROUP BY crop_name;
+
+Q3)
+SELECT *
+FROM crop_yield
+ORDER BY yield_tons DESC
+LIMIT 2;

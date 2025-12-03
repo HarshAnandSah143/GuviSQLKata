@@ -1,0 +1,15 @@
+Q1)
+select * from produce where category = 'Vegetable';
+
+Q2)
+select category,sum(quantity) from produce group by category;
+
+Q3)
+update produce set price=45 where id=2;
+select * from produce where category='Vegetable';
+
+Q4)
+select avg(price) from produce;
+
+Q5)
+delete from produce where id=3;

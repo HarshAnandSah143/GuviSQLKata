@@ -1,0 +1,17 @@
+Q1)
+SELECT movie_name, SUM(seats_booked) 
+AS total_seats_booked
+FROM ticket_bookings
+GROUP BY movie_name;
+
+Q2)
+SELECT *
+FROM ticket_bookings
+WHERE seats_booked > 10;
+
+Q3)
+SELECT movie_name, SUM(seats_booked) 
+AS total_seats_booked
+FROM ticket_bookings
+GROUP BY movie_name
+HAVING SUM(seats_booked) > 15;

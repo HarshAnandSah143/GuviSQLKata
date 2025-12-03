@@ -1,0 +1,17 @@
+Q1)
+SELECT *
+FROM gym_equipment
+WHERE last_maintenance < '2025-06-01';
+
+Q2)
+SELECT category, SUM(quantity) AS total_quantity
+FROM gym_equipment
+GROUP BY category;
+
+Q3)
+UPDATE gym_equipment
+SET quantity = quantity + 3
+WHERE equipment_name = 'Treadmill';
+SELECT *
+FROM gym_equipment
+WHERE equipment_name = 'Treadmill';

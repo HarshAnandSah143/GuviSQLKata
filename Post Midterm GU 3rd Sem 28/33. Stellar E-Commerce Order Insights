@@ -1,0 +1,21 @@
+Q1)
+SELECT *
+FROM product_orders
+WHERE quantity > 5;
+
+Q2)
+SELECT product_name, SUM(quantity) 
+AS total_quantity
+FROM product_orders
+GROUP BY product_name;
+
+Q3)
+SELECT *
+FROM product_orders
+ORDER BY order_date DESC
+LIMIT 2;
+
+Q4)
+SELECT DISTINCT product_name
+FROM product_orders
+WHERE quantity > 5;

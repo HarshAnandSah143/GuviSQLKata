@@ -1,0 +1,15 @@
+Q1)
+select * from travel_packages;
+
+Q2)
+update travel_packages set available_slots=available_slots-5 where package_name='Mountain Escape';
+
+Q3)
+INSERT INTO travel_packages (id,package_name, destination, price, available_slots)
+VALUES (4,'Cultural Tour','Japan',100000.00,20);
+
+Q4)
+select package_name from travel_packages group by package_name order by price desc limit 1;
+
+Q5)
+select sum(price*available_slots) as potential_revenue from travel_packages;

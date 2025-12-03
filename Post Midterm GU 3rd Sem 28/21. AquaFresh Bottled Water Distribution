@@ -1,0 +1,9 @@
+Q1)
+SELECT *
+FROM water_shipments
+WHERE quantity > 500;
+
+Q2)
+SELECT city, SUM(quantity) AS total_bottles
+FROM water_shipments
+GROUP BY city;

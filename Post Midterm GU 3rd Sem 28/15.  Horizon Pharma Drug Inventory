@@ -1,0 +1,9 @@
+Q1)
+SELECT *
+FROM drug_inventory
+WHERE quantity < 60;
+
+Q2)
+SELECT category, COUNT(*) AS drug_count
+FROM drug_inventory
+GROUP BY category;

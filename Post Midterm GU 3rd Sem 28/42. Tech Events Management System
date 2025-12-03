@@ -1,0 +1,23 @@
+Q1)
+SELECT COUNT() 
+AS total_usa_conferences
+FROM tech_conferences
+WHERE location LIKE '%USA%';*
+
+Q2)
+select * from tech_conferences 
+where organizer = 'TechWorld Inc.';
+
+Q3)
+SELECT * FROM tech_conferences
+WHERE
+    (JULIANDAY(end_date) - JULIANDAY(start_date) + 1) >= 3;
+
+Q4)
+select conference_name 
+from tech_conferences 
+order by start_date asc limit 1;
+
+Q5)
+select * from tech_conferences 
+order by location asc;

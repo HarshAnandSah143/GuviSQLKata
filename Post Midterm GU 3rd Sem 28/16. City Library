@@ -1,0 +1,17 @@
+Q1)
+select * from books;
+
+Q2)
+update books set available_copies=available_copies+2 where id=2;
+
+Q3)
+insert into books(id,title,author,genre,publication_year,available_copies) values(4, 'Moby Dick', 'Herman Melville', 'Classic', 1851, 8);
+
+Q4)
+SELECT title
+FROM books
+ORDER BY publication_year DESC
+LIMIT 1;
+
+Q5)
+select sum(	available_copies) as toyal_copies from books;

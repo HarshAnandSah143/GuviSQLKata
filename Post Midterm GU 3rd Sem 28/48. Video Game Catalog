@@ -1,0 +1,21 @@
+Q1)
+select * from video_games 
+where release_date > '2020-12-31';
+
+Q2)
+select count(*) from video_games 
+where platform = 'PC';
+
+Q3)
+select * from video_games 
+where developer = 'Nintendo';
+
+Q4)
+SELECT * FROM video_games
+WHERE genre = 'RPG'
+ORDER BY release_date desc;
+
+Q5)
+SELECT
+    AVG(CAST(strftime('%Y', release_date) AS REAL)) AS AverageReleaseYear
+FROM video_games;

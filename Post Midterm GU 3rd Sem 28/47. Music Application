@@ -1,0 +1,15 @@
+Q1)
+select * from music_playlists 
+where 	number_of_songs > 30;
+
+Q2)
+select * from music_playlists 
+order by total_duration desc limit 1;
+
+Q3)
+select * from music_playlists 
+where created_by = 'Charlie';
+
+Q4)
+select avg(number_of_songs) 
+from music_playlists;

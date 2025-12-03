@@ -1,0 +1,30 @@
+Q1)
+SELECT 
+  species_name, 
+  habitat_tank, 
+  feeding_time,
+  RANK() OVER (ORDER BY feeding_time ASC) 
+  AS feeding_rank
+FROM marine_animals
+WHERE caretaker_name = 'Rajesh';
+
+Q2)
+WITH tank_counts AS (
+  SELECT 
+    habitat_tank, 
+    COUNT(*) AS animal_count
+  FROM marine_animals
+  GROUP BY habitat_tank
+),
+total_animals AS (
+  SELECT COUNT(*) AS total_count
+  FROM marine_animals
+)
+SELECT 
+  t.habitat_tank,
+  t.animal_count,
+  ROUND((t.animal_count * 100.0) / total.total_count, 2) 
+  AS percentage_of_total
+FROM tank_counts t, total_animals total;
+
+Q3)

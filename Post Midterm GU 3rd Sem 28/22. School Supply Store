@@ -1,0 +1,15 @@
+Q1)
+select * from supplies where category = 'Writing';
+
+Q2)
+select category,stock from supplies group by category ;
+
+Q3)
+update supplies set stock = 90 where id=3;
+select * from supplies where id=3;
+
+Q4)
+select sum(price*stock) from supplies;
+
+Q5)
+delete from supplies where id = 2;

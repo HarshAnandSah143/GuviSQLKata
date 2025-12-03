@@ -1,0 +1,10 @@
+Q1)
+SELECT  product_name,
+    CAST(price - (price * discount_percent / 100.0) AS INT) AS final_price
+FROM fashion_products;
+
+Q2)
+SELECT 
+  product_name,
+  ROUND(price - price * discount_percent / 100,2) AS final_price
+FROM fashion_products;

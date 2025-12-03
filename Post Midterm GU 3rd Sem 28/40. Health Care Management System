@@ -1,0 +1,20 @@
+Q1)
+select patient_name 
+from patients p 
+join appointments a 
+on p.id = a.patient_id 
+where appointment_date > '2024-08-31';
+
+Q2)
+select doctor_name 
+from doctors 
+where specialty = 'Cardiology';
+
+Q3)
+select contact_number 
+from patients 
+where id = 2;
+
+Q4)
+update patients set contact_number = 9999999999 
+where id = 1;

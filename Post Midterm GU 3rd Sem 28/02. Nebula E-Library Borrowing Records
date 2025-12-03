@@ -1,0 +1,11 @@
+Q1)
+SELECT member_name, COUNT(*) AS total_books_borrowed
+FROM borrow_records
+GROUP BY member_name;
+
+Q2)
+SELECT member_name, COUNT(*) AS total_books_borrowed
+FROM borrow_records
+GROUP BY member_name
+ORDER BY total_books_borrowed DESC
+LIMIT 1;
