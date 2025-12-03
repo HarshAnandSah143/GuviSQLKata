@@ -1,5 +1,9 @@
 Q1)
-
+SELECT cp.project_name, cp.budget, pe.engineer_name, pe.role
+FROM construction_projects cp
+INNER JOIN project_engineers pe
+ON cp.project_id = pe.project_id
+WHERE cp.budget > 100000000;
 
 Q2)
 SELECT ROUND(AVG(budget), 2) 
@@ -11,4 +15,5 @@ BEGIN TRANSACTION;
 UPDATE construction_projects
 SET budget = 250000000
 WHERE project_id = 1;
+
 ROLLBACK;
