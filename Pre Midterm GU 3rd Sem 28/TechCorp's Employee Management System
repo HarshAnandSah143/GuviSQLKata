@@ -1,0 +1,33 @@
+Q1)
+SELECT department, ROUND(AVG(salary), 2) AS average_salary
+FROM employees
+GROUP BY department
+ORDER BY average_salary DESC;
+
+Q2)
+UPDATE employees
+SET salary = salary * 1.05
+WHERE hire_date <= date('2024-12-20', '-2 years');
+SELECT 
+    name,
+    salary AS new_salary,
+    ROUND(salary / 1.05 * 0.05, 2) AS raise_amount
+FROM employees
+WHERE hire_date <= date('2024-12-20', '-2 years');
+
+Q3)
+INSERT INTO employees (id, name, department, position, hire_date, salary)
+VALUES (6, 'Eva Green', 'IT', 'Manager', '2024-12-20', 90000.00);
+SELECT * FROM employees WHERE department = 'IT';
+
+Q4)
+SELECT
+    department,
+    sum(salary) as total_salary,
+    round(sum(salary) * 100.0 / (select sum(salary)from employees),2)as perce
+FROM
+    employees
+GROUP BY
+    department
+ORDER BY
+    perce DESC;
