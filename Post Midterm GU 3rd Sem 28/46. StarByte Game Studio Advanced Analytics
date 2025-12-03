@@ -1,7 +1,27 @@
 Q1)
-
+SELECT g.game_id, g.game_name, g.genre, g.average_rating
+FROM games g
+JOIN (
+    SELECT genre, AVG(average_rating) AS genre_avg
+    FROM games
+    GROUP BY genre
+) ga ON g.genre = ga.genre
+WHERE g.average_rating > ga.genre_avg;
 
 Q2)
-
+SELECT g1.game_id, g1.game_name, g1.genre, g1.release_year
+FROM games g1
+WHERE g1.release_year = (
+    SELECT MAX(g2.release_year)
+    FROM games g2
+    WHERE g2.genre = g1.genre
+);
 
 Q3)
+SELECT g1.game_id, g1.game_name, g1.release_year, g1.average_rating
+FROM games g1
+WHERE g1.average_rating > (
+    SELECT AVG(g2.average_rating)
+    FROM games g2
+    WHERE g2.release_year = g1.release_year
+);
