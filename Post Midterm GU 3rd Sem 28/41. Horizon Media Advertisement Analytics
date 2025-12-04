@@ -2,7 +2,23 @@ Q1)
 
 
 Q2)
-
+SELECT 
+    a.ad_id,
+    a.client_name,
+    a.ad_type,
+    a.duration_seconds,
+    a.release_date
+FROM advertisements a
+JOIN (
+    SELECT 
+        ad_type,
+        AVG(duration_seconds) AS avg_duration
+    FROM advertisements
+    GROUP BY ad_type
+) t
+ON a.ad_type = t.ad_type
+WHERE a.duration_seconds > t.avg_duration
+ORDER BY a.ad_type, a.duration_seconds DESC;
 
 Q3)
 SELECT 
@@ -13,4 +29,5 @@ SELECT
   RANK() OVER (PARTITION BY ad_type 
   ORDER BY duration_seconds DESC) 
   AS duration_rank
+
 FROM advertisements;
