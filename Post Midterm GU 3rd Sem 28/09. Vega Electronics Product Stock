@@ -1,0 +1,9 @@
+Q1)
+SELECT *
+FROM electronics_stock
+WHERE category = 'Accessories';
+
+Q2)
+SELECT category, SUM(quantity) AS total_quantity
+FROM electronics_stock
+GROUP BY category;
