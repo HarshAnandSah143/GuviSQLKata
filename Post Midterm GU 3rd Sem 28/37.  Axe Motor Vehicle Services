@@ -1,0 +1,33 @@
+Q1)
+SELECT 
+    service_id,
+    vehicle_number,
+    owner_name,
+    service_type,
+    service_date
+FROM vehicle_service
+WHERE service_type = 'Full Service'
+  AND service_date 
+  BETWEEN DATE('2025-08-07', '-6 DAY') 
+  AND DATE('2025-08-07')
+ORDER BY service_date DESC;
+
+Q2)
+WITH service_counts AS (
+  SELECT service_type, COUNT(*) 
+  AS total_services
+  FROM vehicle_service
+  GROUP BY service_type
+),
+overall_total AS (
+  SELECT COUNT(*) AS grand_total
+  FROM vehicle_service
+)
+SELECT 
+  sc.service_type,
+  sc.total_services,
+  ROUND((sc.total_services * 100.0) / ot.grand_total, 2) 
+  AS percentage_contribution
+FROM service_counts sc, overall_total ot;
+
+Q3)
