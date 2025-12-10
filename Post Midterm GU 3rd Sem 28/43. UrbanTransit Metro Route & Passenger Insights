@@ -27,5 +27,4 @@ SELECT
     ROUND(daily_passengers / travel_time_minutes, 2) AS efficiency
 FROM metro_routes
 WHERE travel_time_minutes < 30
-
 ORDER BY efficiency DESC;
