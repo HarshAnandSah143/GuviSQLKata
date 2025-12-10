@@ -31,3 +31,14 @@ SELECT
 FROM service_counts sc, overall_total ot;
 
 Q3)
+SELECT 
+    owner_name,
+    vehicle_number,
+    MAX(service_date) AS last_service_date,
+    CASE 
+        WHEN MAX(service_date) <= date('now','-10 days') 
+             THEN 'Service Due'
+        ELSE 'Up To Date'
+    END AS service_status
+FROM vehicle_service
+GROUP BY owner_name, vehicle_number;
