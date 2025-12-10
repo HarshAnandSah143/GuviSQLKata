@@ -1,5 +1,24 @@
 Q1)
-
+WITH type_stats AS (
+    SELECT 
+        ad_type,
+        SUM(duration_seconds) AS total_duration,
+        AVG(duration_seconds) AS avg_duration
+    FROM advertisements
+    GROUP BY ad_type
+),
+overall AS (
+    SELECT SUM(duration_seconds) AS grand_total
+    FROM advertisements
+)
+SELECT 
+    t.ad_type,
+    t.total_duration,
+    t.avg_duration,
+    ROUND((t.total_duration / o.grand_total) * 100, 2) AS percentage_contribution
+FROM type_stats t
+CROSS JOIN overall o
+ORDER BY t.total_duration DESC;
 
 Q2)
 SELECT 
@@ -31,3 +50,4 @@ SELECT
   AS duration_rank
 
 FROM advertisements;
+
