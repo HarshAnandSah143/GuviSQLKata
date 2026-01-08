@@ -1,0 +1,24 @@
+Q1)
+select count(*) as total_pets
+from pets;
+
+Q2)
+select age
+from pets
+where name = 'Fluffy'
+    and owner = 'Alice';
+
+Q3)
+update pets
+set age = 6
+where 
+     owner = 'Bob';
+select *
+from pets
+where name = 'Buddy';
+
+Q4)
+insert into pets (ID, Name, Species, Age, Owner)
+values (6, 'Shelly', 'Turtle', 10, 'Grace');
+select * from Pets
+where Owner = 'Grace';
